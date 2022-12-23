@@ -1,0 +1,2 @@
+Basic/Random Talks.
+Why DBMS is required and all.

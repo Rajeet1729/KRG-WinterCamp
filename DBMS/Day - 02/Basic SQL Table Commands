@@ -1,0 +1,275 @@
+--databse is created
+CREATE DATABASE PrabhjotSingh_20BCS7287;
+
+--show all the tables in the database
+show databases;
+
+--specify the database you want to use
+use PrabhjotSingh_20BCS7287;
+
+--Create the Column Names
+create table employee(
+    EID int,
+    Ename varchar(300),
+    Address varchar(300),
+    Mobile varchar(20),
+    DOB date,
+    DOJ date,
+    salary int,
+    Department varchar(100),
+    Positionn varchar(200)
+);
+
+--Show the contents of the table
+select
+    *
+from
+    employee;
+
+--Insert values into the table
+insert into
+    employee
+values
+(
+        101,
+        'Shiv',
+        'Delhi',
+        9873845678,
+        '1995-03-01',
+        '2019-05-27',
+        50000,
+        'Finance',
+        ''
+    );
+
+
+--Insert values into the table
+insert into
+    employee
+values
+(
+        102,
+        'Rohan',
+        'Dehradun',
+        98738455467,
+        '1999-05-01',
+        '2020-02-29',
+        53000,
+        'Customer Support',
+        ''
+    );
+
+
+--Insert values into the table
+insert into
+    employee
+values
+(
+        117,
+        'Shyam',
+        'Sitapur',
+        8043198824,
+        '1999-01-26',
+        '2020-08-22',
+        52500,
+        'Sales',
+        ''
+    );
+
+
+--Insert values into the table
+insert into
+    employee
+values
+(
+        118,
+        'Tushar',
+        'Mysore',
+        8004197824,
+        '1988-05-15',
+        '2014-02-11',
+        55000,
+        'Customer Support',
+        ''
+    );
+
+
+--Insert values into the table
+insert into
+    employee
+values
+(
+        119,
+        'Shashwat',
+        'Shimla',
+        8004937824,
+        '1990-07-14',
+        '2017-08-16',
+        69000,
+        'Operations',
+        ''
+    );
+
+
+--Insert values into the table
+insert into
+    employee
+values
+(
+        120,
+        'ankit',
+        'Srinagar',
+        8143198824,
+        '1994-11-16',
+        '2018-12-12',
+        90000,
+        'Research',
+        ''
+    );
+
+
+--Insert values into the table
+insert into
+    employee
+values
+(
+        121,
+        'Amit',
+        'Kanpur',
+        9784198824,
+        '1998-01-15',
+        '2019-01-22',
+        40000,
+        'Sales',
+        ''
+    );
+
+select
+    *
+from
+    employee;
+
+
+--Add new Colunm in the table
+ALTER TABLE
+    employee
+ADD
+    AddressSecond varchar(300);
+
+
+--Show the table Contents
+select
+    *
+from
+    employee;
+
+--Insert values in the new Inserted Colunm
+Update
+    employee
+set
+    AddressSecond = 'Home'
+where
+    EID = 101;
+
+select
+    *
+from
+    employee;
+
+--Add new Colunm in the table
+ALTER TABLE
+    employee
+ADD
+    Bonus int;
+
+SELECT
+    *
+from
+    employee;
+
+UPDATE
+    employee
+SET
+    Bonus = 1000;
+
+SELECT
+    *
+FROM
+    employee;
+
+update
+    employee
+set
+    salary = salary + Bonus;
+
+select
+    *
+from
+    employee;
+
+ALTER TABLE
+    employee
+ADD
+    HouseRentAllowance int;
+
+update
+    employee
+set
+    HouseRentAllowance = salary * 0.1;
+
+SELECT
+    *
+FROM
+    employee;
+
+ALTER TABLE
+    employee
+ADD
+    ProvidentFund int;
+
+update
+    employee
+set
+    ProvidentFund = salary * 0.15;
+
+ALTER TABLE
+    employee
+ADD
+    DearnessAllowance int;
+
+update
+    employee
+set
+    DearnessAllowance = salary * 0.9;
+
+ALTER TABLE
+    employee
+ADD
+    MedAllowance int;
+
+update
+    employee
+set
+    MedAllowance = salary * 0.03;
+
+ALTER TABLE
+    employee
+ADD
+    GrossPay int;
+
+update
+    employee
+set
+    GrossPay = (
+        salary + HouseRentAllowance + Bonus + DearnessAllowance + MedAllowance
+    ) - ProvidentFund;
+
+SELECT
+    *
+FROM
+    employee;
+
+--Descirbe the Colunm Headings of the table
+DESCRIBE employee;
+
+--Add Date of Leaving the Company, and Calculate the Time, he/she served in the company

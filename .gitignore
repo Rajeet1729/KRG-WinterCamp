@@ -1,0 +1,9 @@
+
+#compild files
+*.exe
+*.class
+.vscode/
+
+# *.log 
+# *.sql
+# *.sqlite
